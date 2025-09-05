@@ -1,10 +1,11 @@
 # 💬 WhatsApp Chat Analyzer (NLP & Streamlit)  
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/)  
-[![NLP](https://img.shields.io/badge/NLP-Text%20Analysis-green)](https://en.wikipedia.org/wiki/Natural_language_processing)  
-[![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-red)](https://streamlit.io/)  
-[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-orange)](https://matplotlib.org/)  
-
+<p align="center">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-blue"></a>
+  <a href="https://en.wikipedia.org/wiki/Natural_language_processing"><img src="https://img.shields.io/badge/NLP-Text%20Analysis-green"></a>
+  <a href="https://streamlit.io/"><img src="https://img.shields.io/badge/Streamlit-Web%20App-red"></a>
+  <a href="https://matplotlib.org/"><img src="https://img.shields.io/badge/Matplotlib-Visualization-orange"></a>
+</p>
 ---
 
 ## 📌 Project Overview  
