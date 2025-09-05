@@ -58,21 +58,6 @@ It transforms raw text files into **data-driven visualizations** for exploring e
 5. **Visualization** – Generate charts, activity heatmaps, and emoji barplots  
 6. **Interactive Exploration** – Analyze chats overall or per user via Streamlit controls  
 
----
-
-## 📁 Folder Structure  
-WhatsApp-Chat-Analyzer/
-├── app.py # Streamlit application
-├── preprocessor.py # Data cleaning & formatting
-├── helper.py # Stats, timelines, NLP & visualization functions
-├── requirements.txt # Python dependencies
-├── Screenshots/ # Output visuals (word cloud, timelines, heatmap, etc.)
-│ ├── Summary.png
-│ ├── WordCloud.png
-│ └── EmojiAnalysis.png
-└── README.md
----
-
 ## 🚀 How to Run  
 ```bash
 # Clone the repository
