@@ -26,7 +26,7 @@ It transforms raw text files into **data-driven visualizations** for exploring e
 ### 1️⃣ Summary & Timelines  
 ![Summary](Snapshots/summary.png)  
 
-### 2️⃣ Word Cloud  
+### 2️⃣ Activity Map
 ![WordCloud](Snapshots/activity_map.png)  
 
 ---
@@ -61,20 +61,16 @@ It transforms raw text files into **data-driven visualizations** for exploring e
 ---
 
 ## 📁 Folder Structure  
-
 WhatsApp-Chat-Analyzer/
-│
 ├── app.py # Streamlit application
-├── preprocessor.py
+├── preprocessor.py # Data cleaning & formatting
 ├── helper.py # Stats, timelines, NLP & visualization functions
-├── requirements.txt 
-├── Snapshots/ 
+├── requirements.txt # Python dependencies
+├── Screenshots/ # Output visuals (word cloud, timelines, heatmap, etc.)
 │ ├── Summary.png
 │ ├── WordCloud.png
 │ └── EmojiAnalysis.png
 └── README.md
-
-
 ---
 
 ## 🚀 How to Run  
