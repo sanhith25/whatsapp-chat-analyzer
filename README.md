@@ -1,11 +1,22 @@
 # 💬 WhatsApp Chat Analyzer (NLP & Streamlit)  
 
+## 🛠 Tech Stack & Tools
+
 <p align="center">
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-blue"></a>
-  <a href="https://en.wikipedia.org/wiki/Natural_language_processing"><img src="https://img.shields.io/badge/NLP-Text%20Analysis-green"></a>
-  <a href="https://streamlit.io/"><img src="https://img.shields.io/badge/Streamlit-Web%20App-red"></a>
-  <a href="https://matplotlib.org/"><img src="https://img.shields.io/badge/Matplotlib-Visualization-orange"></a>
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Natural_language_processing">
+    <img src="https://img.shields.io/badge/NLP-Text%20Analysis-green?style=for-the-badge"/>
+  </a>
+  <a href="https://streamlit.io/">
+    <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
+  </a>
+  <a href="https://matplotlib.org/">
+    <img src="https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=for-the-badge&logo=plotly&logoColor=white"/>
+  </a>
 </p>
+
 ---
 
 ## 📌 Project Overview  
@@ -41,12 +52,12 @@ It transforms raw text files into **data-driven visualizations** for exploring e
 ---
 
 ## 🛠 Tech Stack & Tools  
-- **Python (3.8+)** – Core programming  
-- **Streamlit** – Interactive web app interface  
-- **Pandas & NumPy** – Data preprocessing & transformations  
-- **Matplotlib** – Data visualization (timelines, bar charts, heatmaps)  
-- **WordCloud** – NLP-based frequent word analysis  
-- **emoji** – Emoji parsing & insights  
+- **Python (3.8+)** 
+- **Streamlit**  
+- **Pandas & NumPy** 
+- **Matplotlib** 
+- **WordCloud** 
+- **emoji**  
 - **Custom Modules** – `preprocessor.py` & `helper.py` for text cleaning & analysis  
 
 ---
