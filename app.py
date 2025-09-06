@@ -4,28 +4,23 @@ from matplotlib import font_manager as fm
 import emoji as emoji_lib
 import matplotlib.dates as mdates
 
-
 import preprocessor, helper
 
-# ---------- Page setup ----------
 st.set_page_config(page_title="WhatsApp Chat Analyzer", layout="wide")
 st.title("📱 WhatsApp Chat Analyzer")
 st.caption("Upload your exported chat file to view summary stats and participation insights.")
 
-# ---------- Emoji font utilities (Windows-friendly) ----------
 EMOJI_FONTS = [
-    "Segoe UI Emoji",       # Windows
-    "Apple Color Emoji",    # macOS (in case you run elsewhere)
-    "Noto Color Emoji",     # Linux
+    "Segoe UI Emoji",
+    "Apple Color Emoji",
+    "Noto Color Emoji",
     "Noto Emoji",
     "Twemoji Mozilla",
     "Symbola",
 ]
 
 def pick_emoji_font():
-    """
-    Try to set a system emoji font for Matplotlib.
-    Returns the chosen font name, or None if not found.
+    """ try to set emoji system for font on matlplotlib, and it returns selected font name ,else none
     """
     for name in EMOJI_FONTS:
         try:
@@ -42,18 +37,16 @@ def strip_vs16(s: str) -> str:
     """Remove emoji variation selector-16 to avoid tofu boxes on some fonts."""
     return s.replace("\ufe0f", "")
 
-# ---------- Sidebar ----------
 st.sidebar.title("Controls")
 uploaded_file = st.sidebar.file_uploader("Choose a WhatsApp chat file (.txt)")
 
-# ---------- Body ----------
 if uploaded_file is None:
     st.info("👈 Upload a chat file to begin.")
 else:
     # Read & preprocess
     bytes_data = uploaded_file.getvalue()
     data = bytes_data.decode("utf-8", errors="ignore")
-    df = preprocessor.preprocess(data)  # expected to return DataFrame with ['user','message',...]
+    df = preprocessor.preprocess(data)
 
     user_list = df["user"].unique().tolist()
     if "group_notification" in user_list:
@@ -97,7 +90,7 @@ else:
 
         st.pyplot(fig)
 
-        # ---------- Daily Timeline ----------
+        # daily timeline
         st.divider()
         st.subheader("Daily Timeline")
         daily = helper.daily_timeline(selected_user, df)
@@ -118,14 +111,12 @@ else:
 
             st.pyplot(fig, use_container_width=True)
 
-        # ---------- Most busy users (only for Overall) ----------
+        #most busy users
         if selected_user == "Overall":
             st.subheader("Most Busy Users")
             st.caption("Top contributors by message count and their share of total conversation.")
 
             x, new_df = helper.most_busy_users(df)
-
-            # Layout: chart on the left, table on the right
             left, right = st.columns([2, 1], gap="large")
 
             with left:
@@ -142,7 +133,7 @@ else:
                 st.markdown("**User Activity Summary**")
                 st.dataframe(new_df, use_container_width=True)
 
-        # ---------- Activity Map ----------
+        # activity Map
         st.divider()
         st.subheader("Activity Map")
         col_day, col_month = st.columns(2, gap="large")
@@ -162,7 +153,7 @@ else:
                 plt.xticks(rotation=45, ha="right")
                 plt.tight_layout()
                 st.pyplot(fig1, use_container_width=True)
-        # Most busy month
+        # most busy month
         with col_month:
             st.markdown("**Most busy month**")
             month_counts = helper.most_busy_month(selected_user, df)
@@ -179,7 +170,7 @@ else:
                 plt.tight_layout()
                 st.pyplot(fig2, use_container_width=True)
 
-        # ---------- Weekly Activity Heatmap ----------
+        # weekly activity heatmap
         st.divider()
         st.subheader("Weekly Activity Heatmap")
         hm = helper.activity_heatmap(selected_user, df)
@@ -204,7 +195,7 @@ else:
             plt.tight_layout()
             st.pyplot(fig, use_container_width=True)
 
-        # ---------- Word Cloud ----------
+        ## wordcloud
         st.divider()
         st.subheader("Word Cloud")
         st.caption("Overall" if selected_user == "Overall" else f"For: {selected_user}")
@@ -219,7 +210,7 @@ else:
             ax.axis("off")
             st.pyplot(fig, use_container_width=True)
 
-        # ---------- Most Common Words ----------
+        ###most common words
         st.divider()
         st.subheader("Most Common Words")
         st.caption("Based on text content (ignores stopwords, media, and deleted messages).")
